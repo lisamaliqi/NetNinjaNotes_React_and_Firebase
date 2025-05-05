@@ -1,6 +1,6 @@
 // all react hooks start with "use"
 // useState hooks is for components that can change over time or in a reaction to something
-import { useState } from "react";
+import React, { useState } from "react";
 import Title from "./components/Title";
 import './app.css'
 
@@ -78,11 +78,11 @@ function App() {
 
             {/*javascript when inside {} */showEvents && events.map((event, index) => { //run righthand of && if lefthand is true, called "logical and"
                 return (
-                    <div key={event.id}> {/* you need to give each item an unique key value (id) */}
+                    < React.Fragment key={event.id}> {/* you need to give each item an unique key value (id) */}
                         <h2>{index} - {event.title}</h2>
                         <button onClick={() => handleClick(event.id)}>Delete event</button> {/* handleClick 2 */}
                         {/* its an anonymous function, it wont be called directly, it will be called once the button is pressed */}
-                    </div>
+                    </React.Fragment>
                 );
             })}
         </div>
