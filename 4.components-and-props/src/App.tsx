@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Title from "./components/Title";
 import './app.css'
+import Modal from "./components/Modal";
 
 function App() {
     //This option changes the name in the console, but not the dom, this is because we need to use states
@@ -85,6 +86,8 @@ function App() {
                     </React.Fragment>
                 );
             })}
+
+            <Modal />
         </div>
     )
 };
