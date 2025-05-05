@@ -27,6 +27,10 @@ function App() {
         {title: 'Laundry', id: 3}
     ]);
 
+    const [showEvents, setShowEvents] = useState(true);
+    console.log(showEvents);
+    
+
     const handleClick = (id: number) => { //id is not included in prt 1
         //1
         //setName('tova'); //call the function and change its value to 'tova' when button is clicked
@@ -44,12 +48,33 @@ function App() {
         console.log(id);//log the id of the button pressed
     };
 
+
+
+
+
+
+
+
+
+
+
     return ( 
         <div className="App"> 
+            {showEvents && (
+                <div>
+                    <button onClick={() => {setShowEvents(false)}}>Hide events</button>
+                </div>
+            )}
+            {!showEvents && (
+                <div>
+                    <button onClick={() => {setShowEvents(true)}}>Show events</button>
+                </div>
+            )}
+
             <h1>My name is {name}</h1>
             {/* <button onClick={handleClick}>Change name</button> handleClick 1 */}
 
-            {/*javascript when inside {} */events.map((event, index) => {
+            {/*javascript when inside {} */showEvents && events.map((event, index) => { //run righthand of && if lefthand is true, called "logical and"
                 return (
                     <div key={event.id}> {/* you need to give each item an unique key value (id) */}
                         <h2>{index} - {event.title}</h2>
