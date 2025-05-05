@@ -8,7 +8,7 @@ export default function Modal(props: any) {
             {/* <h2>10% off code!</h2>
             <p>Use code Lajsa for 10% off next purchase</p> */}
             {props.children}
-            <button onClick={props.handleClose}>close</button>
+            <button onClick={props.toggleModal}>close</button>
         </div>
     </div>
   )

@@ -30,11 +30,15 @@ function App() {
 
     const subtitle = 'all the latest events in marioland' 
 
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
     console.log('showModal: ', showModal);
     
-    const handleClose = () => {
-        setShowModal(false);
+    const toggleModal = () => {
+        console.log('showmodal in togglemodal: ', showModal);
+        
+        showModal 
+            ? setShowModal(false)
+            : setShowModal(true)
         
     };
     
@@ -101,7 +105,12 @@ function App() {
                 <p>Use code Lajsa for 10% off next purchase</p> 
             </Modal> */}
 
-            {showModal && <Modal handleClose={handleClose}>
+            <br />
+            <div>
+                <button onClick={toggleModal}>Show modal!!!</button>
+            </div>
+
+            {showModal && <Modal toggleModal={toggleModal}>
                 <h2>Terms and conditions</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam quo molestiae ipsam saepe corporis officiis amet, officia expedita deserunt eligendi enim praesentium repudiandae, alias maxime fugit reiciendis minus perspiciatis.</p>
                 <a href="#">Find our more...</a>
