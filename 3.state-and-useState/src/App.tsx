@@ -27,20 +27,34 @@ function App() {
         {title: 'Laundry', id: 3}
     ]);
 
-    const handleClick = () => {
-        setName('tova'); //call the function and change its value to 'tova' when button is clicked
-        console.log(name);
+    const handleClick = (id: number) => { //id is not included in prt 1
+        //1
+        //setName('tova'); //call the function and change its value to 'tova' when button is clicked
+        //console.log(name);
+
+        //rule of thumb:
+        //when state update depends on previous state, always use callback to access previous state first
+        //then base state update on that previous value
+        setEvents((prevEvents) => { 
+            return prevEvents.filter((event) => {
+                return id !== event.id;
+            });
+        });
+
+        console.log(id);//log the id of the button pressed
     };
 
     return ( 
         <div className="App"> 
             <h1>My name is {name}</h1>
-            <button onClick={handleClick}>Change name</button>
+            {/* <button onClick={handleClick}>Change name</button> handleClick 1 */}
 
             {/*javascript when inside {} */events.map((event, index) => {
                 return (
-                    <div key={event.id}> {/* you need to give each item an uniqe key value (id) */}
+                    <div key={event.id}> {/* you need to give each item an unique key value (id) */}
                         <h2>{index} - {event.title}</h2>
+                        <button onClick={() => handleClick(event.id)}>Delete event</button> {/* handleClick 2 */}
+                        {/* its an anonymous function, it wont be called directly, it will be called once the button is pressed */}
                     </div>
                 );
             })}
