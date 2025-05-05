@@ -27,6 +27,16 @@ function App() {
 
     const [showEvents, setShowEvents] = useState(true);
     console.log(showEvents);
+
+    const subtitle = 'all the latest events in marioland' 
+
+    const [showModal, setShowModal] = useState(true);
+    console.log('showModal: ', showModal);
+    
+    const handleClose = () => {
+        setShowModal(false);
+        
+    };
     
 
     const handleClick = (id: number) => { //id is not included in prt 1
@@ -54,7 +64,6 @@ function App() {
 
 
 
-    const subtitle = 'all the latest events in marioland'
 
     return ( 
         <div className="App"> 
@@ -92,11 +101,11 @@ function App() {
                 <p>Use code Lajsa for 10% off next purchase</p> 
             </Modal> */}
 
-            <Modal>
+            {showModal && <Modal handleClose={handleClose}>
                 <h2>Terms and conditions</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam quo molestiae ipsam saepe corporis officiis amet, officia expedita deserunt eligendi enim praesentium repudiandae, alias maxime fugit reiciendis minus perspiciatis.</p>
                 <a href="#">Find our more...</a>
-            </Modal>
+            </Modal>}
         </div>
     )
 };
