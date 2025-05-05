@@ -87,7 +87,16 @@ function App() {
                 );
             })}
 
-            <Modal />
+            {/* <Modal>
+                <h2>10% off code!</h2>
+                <p>Use code Lajsa for 10% off next purchase</p> 
+            </Modal> */}
+
+            <Modal>
+                <h2>Terms and conditions</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam quo molestiae ipsam saepe corporis officiis amet, officia expedita deserunt eligendi enim praesentium repudiandae, alias maxime fugit reiciendis minus perspiciatis.</p>
+                <a href="#">Find our more...</a>
+            </Modal>
         </div>
     )
 };
