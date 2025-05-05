@@ -53,11 +53,15 @@ function App() {
 
 
 
-
+    const subtitle = 'all the latest events in marioland'
 
     return ( 
         <div className="App"> 
-            <Title /> {/* Add the Title component from your folder at the top of this return state */}
+            <Title title="Events in your area" subtitle={subtitle}/> {/* Add the Title component from your folder at the top of this return state */}
+            {/* title= is a prop */}
+
+            <Title title="another title" subtitle="another subtitle" />
+            
             {showEvents && (
                 <div>
                     <button onClick={() => {setShowEvents(false)}}>Hide events</button>
