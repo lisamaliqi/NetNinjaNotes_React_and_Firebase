@@ -1,11 +1,8 @@
 // all react hooks start with "use"
 // useState hooks is for components that can change over time or in a reaction to something
 import { useState } from "react";
-
-interface Event {
-    title: string,
-    id: number,
-}
+import Title from "./components/Title";
+import './app.css'
 
 function App() {
     //This option changes the name in the console, but not the dom, this is because we need to use states
@@ -60,6 +57,7 @@ function App() {
 
     return ( 
         <div className="App"> 
+            <Title /> {/* Add the Title component from your folder at the top of this return state */}
             {showEvents && (
                 <div>
                     <button onClick={() => {setShowEvents(false)}}>Hide events</button>
