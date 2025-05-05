@@ -1,8 +1,8 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
 import './Modal.css'
 
 export default function Modal(props: any) {
-  return (
+  return ReactDOM.createPortal((
     <div className='modal-backdrop'>
         <div className="modal">
             {/* <h2>10% off code!</h2>
@@ -11,5 +11,5 @@ export default function Modal(props: any) {
             <button onClick={props.toggleModal}>close</button>
         </div>
     </div>
-  )
+  ), document.body) //will pick it up and put it at the end of the body tag
 };
