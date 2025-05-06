@@ -14,3 +14,17 @@
     background: #fff;
     border-radius: 10px;
 }
+
+
+/* even if this is in the modal document it will affect ALL h2 in the app, it still will be global */
+/* h2 { 
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+} */
+
+
+/* this would be a better option, im scoping it with a root class (modal) */
+.modal h2 { 
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}

@@ -1,3 +1,5 @@
+import './Title.css'
+
 interface Props {
     title: string;
     subtitle: string;
@@ -6,7 +8,7 @@ interface Props {
 
 export default function Title(props: Props) {
     return (
-        <div>
+        <div className='title-block'>
             <h1 className="title">{props.title}</h1>
             <br />
             <h2 className="subtitle">{props.subtitle}</h2>
