@@ -104,7 +104,7 @@ function App() {
                 <button onClick={toggleModal}>Show modal!!!</button>
             </div>
 
-            {showModal && <Modal toggleModal={toggleModal}>
+            {showModal && <Modal toggleModal={toggleModal} isSalesModal={false}>
                 <h2>Terms and conditions</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam quo molestiae ipsam saepe corporis officiis amet, officia expedita deserunt eligendi enim praesentium repudiandae, alias maxime fugit reiciendis minus perspiciatis.</p>
                 <a href="#">Find our more...</a>
