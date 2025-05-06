@@ -5,6 +5,7 @@ import Title from "./components/Title";
 import './app.css'
 import Modal from "./components/Modal";
 import EventList from "./components/EventList";
+import NewEventForm from "./components/NewEventForm";
 
 function App() {
     //This option changes the name in the console, but not the dom, this is because we need to use states
@@ -42,6 +43,18 @@ function App() {
             ? setShowModal(false)
             : setShowModal(true)
         
+    };
+
+    
+    const [showForm, setShowForm] = useState(false);
+    console.log('showForm: ', showForm);
+
+    const toggleForm = () => {
+        console.log('showForm in toggleform: ', showForm);
+        
+        showForm 
+            ? setShowForm(false)
+            : setShowForm(true)
     };
     
 
@@ -101,8 +114,16 @@ function App() {
 
             <br />
             <div>
-                <button onClick={toggleModal}>Show modal!!!</button>
+                <button onClick={toggleForm}>Add new event</button>
             </div>
+
+            <div>
+                <button onClick={toggleModal}>Show modal!!</button>
+            </div>
+
+            {showForm && <Modal toggleForm={toggleForm} isSalesModal={false}>
+                <NewEventForm />
+            </Modal>}
 
             {showModal && <Modal toggleModal={toggleModal} isSalesModal={false}>
                 <h2>Terms and conditions</h2>

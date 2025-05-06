@@ -16,7 +16,7 @@ export default function Modal(props: any) {
 
             {props.children}
             <button 
-                onClick={props.toggleModal} 
+                onClick={props.toggleModal || props.toggleForm} 
                 className={props.isSalesModal ? "sales-btn" : ""}
             >close</button>
         </div>

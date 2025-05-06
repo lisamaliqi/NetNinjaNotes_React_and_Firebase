@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './EventList.module.css'
 
 export default function EventList(props: any) {
