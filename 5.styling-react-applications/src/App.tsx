@@ -32,6 +32,9 @@ function App() {
         setEvents((prevEvents) => {
             return [...prevEvents, event]
         });
+
+        //hide the form when submitting the form
+        setShowForm(false);
     };
 
     const [showEvents, setShowEvents] = useState(true);
