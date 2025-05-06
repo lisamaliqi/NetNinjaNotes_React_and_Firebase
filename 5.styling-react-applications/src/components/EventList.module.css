@@ -1,0 +1,18 @@
+.card {
+    border: 1px solid #eee;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+/* module selector only works if it is class selector or id selector, not tag name, so this would affect every button */
+/* button {
+    background-color: #555;
+} */
+
+/* this would work if you add the class first */
+.card button {
+    background-color: #555;
+}
