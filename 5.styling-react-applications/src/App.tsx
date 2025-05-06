@@ -28,6 +28,12 @@ function App() {
         {title: 'Laundry', id: 3}
     ]);
 
+    const addEvent = (event: any) => {
+        setEvents((prevEvents) => {
+            return [...prevEvents, event]
+        });
+    };
+
     const [showEvents, setShowEvents] = useState(true);
     console.log(showEvents);
 
@@ -45,7 +51,7 @@ function App() {
         
     };
 
-    
+
     const [showForm, setShowForm] = useState(false);
     console.log('showForm: ', showForm);
 
@@ -122,7 +128,7 @@ function App() {
             </div>
 
             {showForm && <Modal toggleForm={toggleForm} isSalesModal={false}>
-                <NewEventForm />
+                <NewEventForm addEvent={addEvent}/>
             </Modal>}
 
             {showModal && <Modal toggleModal={toggleModal} isSalesModal={false}>

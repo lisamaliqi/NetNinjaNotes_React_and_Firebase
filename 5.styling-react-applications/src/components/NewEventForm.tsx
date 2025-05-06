@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NewEventForm.css'
 
-export default function NewEventForm() {
+export default function NewEventForm({addEvent}: any) {
 
     const [ title, setTitle ] = useState('');
     const [ date, setDate ] = useState('');
@@ -18,13 +18,16 @@ export default function NewEventForm() {
     const handelSubmit = (e: any) => {
         e.preventDefault();
 
-        const events = {
+        const event = {
             title: title,
             date: date, 
             id: Math.floor(Math.random() * 10000),  //generate a random int between 1-10000 (not recomendet, works for now)
         };
 
-        console.log('the events: ', events);
+        console.log('the event: ', event);
+
+        addEvent(event);
+
         resetForm();
     };
 
