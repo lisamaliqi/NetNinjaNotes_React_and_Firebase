@@ -1,9 +1,10 @@
 // all react hooks start with "use"
 // useState hooks is for components that can change over time or in a reaction to something
-import React, { useState } from "react";
+import { useState } from "react";
 import Title from "./components/Title";
 import './app.css'
 import Modal from "./components/Modal";
+import EventList from "./components/EventList";
 
 function App() {
     //This option changes the name in the console, but not the dom, this is because we need to use states
@@ -14,7 +15,8 @@ function App() {
     }; */
 
 
-    const [name, setName] = useState('lisa');
+    const [name] = useState('lisa');
+    // const [name, setName] = useState('lisa');
     //first one is state value, aka 'lisa'
     //second is a function which is used to change that state value
     //second function should always be set+name of the first value, ex    discoMode, setDiscoMode
@@ -90,15 +92,7 @@ function App() {
             <h1>My name is {name}</h1>
             {/* <button onClick={handleClick}>Change name</button> handleClick 1 */}
 
-            {/*javascript when inside {} */showEvents && events.map((event, index) => { //run righthand of && if lefthand is true, called "logical and"
-                return (
-                    < React.Fragment key={event.id}> {/* you need to give each item an unique key value (id) */}
-                        <h2>{index} - {event.title}</h2>
-                        <button onClick={() => handleClick(event.id)}>Delete event</button> {/* handleClick 2 */}
-                        {/* its an anonymous function, it wont be called directly, it will be called once the button is pressed */}
-                    </React.Fragment>
-                );
-            })}
+            {/*javascript when inside {} */showEvents && <EventList events={events} handleClick={handleClick} />}
 
             {/* <Modal>
                 <h2>10% off code!</h2>
