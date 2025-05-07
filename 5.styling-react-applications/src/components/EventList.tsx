@@ -10,6 +10,7 @@ export default function EventList(props: any) {
                     css modules are scoped to the components they are referenced in
                 */}
                     <h2>{index} - {event.title}</h2>
+                    <p>{event.location} - {event.date}</p>
                     <button onClick={() => props.handleClick(event.id)}>Delete event</button> {/* handleClick 2 */}
                     {/* its an anonymous function, it wont be called directly, it will be called once the button is pressed */}
                 </div>

@@ -5,6 +5,7 @@ export default function NewEventForm({addEvent}: any) {
 
     const [ title, setTitle ] = useState('');
     const [ date, setDate ] = useState('');
+    const [ location, setLocation ] = useState('Malmö');
  
     // const handleChange = (e: any) => {
     //     setTitle(e.target.value);
@@ -13,6 +14,7 @@ export default function NewEventForm({addEvent}: any) {
     const resetForm = () => {
         setTitle('');
         setDate('');
+        setLocation('Malmö');
     };
 
     const handelSubmit = (e: any) => {
@@ -21,6 +23,7 @@ export default function NewEventForm({addEvent}: any) {
         const event = {
             title: title,
             date: date, 
+            location: location,
             id: Math.floor(Math.random() * 10000),  //generate a random int between 1-10000 (not recomendet, works for now)
         };
 
@@ -52,9 +55,18 @@ export default function NewEventForm({addEvent}: any) {
                 />
             </label>
 
+            <label>
+                <span>Event location:</span>
+                <select onChange={(e) => {setLocation(e.target.value)}}>{/* target the value of the option you choose */}
+                    <option value="malmö">Malmö</option>
+                    <option value="göteborg">Göteborg</option>
+                    <option value="stockholm">Stockholm</option>
+                </select>
+            </label>
+
             <button>Submit</button>
             <p>title - {title}, date - {date}</p>
             <p onClick={resetForm}>Reset the form</p>
         </form>
     )
-}
+};
